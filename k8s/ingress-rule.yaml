@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: voting-app
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "vote.fawzeeglobal.com.ng"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: vote
+            port:
+              number: 5000
+  - host: "result.fawzeeglobal.com.ng"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: result
+            port:
+              number: 5001
+     
