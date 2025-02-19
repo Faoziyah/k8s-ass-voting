@@ -15,7 +15,7 @@ spec:
         app: redis
     spec:
       containers:
-      - image: redis:alpine
+      - image: 784065479571.dkr.ecr.us-east-1.amazonaws.com/redis
         name: redis
         ports:
         - containerPort: 6379
